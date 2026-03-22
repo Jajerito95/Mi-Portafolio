@@ -27,8 +27,17 @@ export default function Home() {
           <span className="text-white drop-shadow-lg">S5</span>
         </h1>
 
-        {/* Línea decorativa */}
-        <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-6"></div>
+        {/* Foto de perfil */}
+<div className="relative mb-6">
+  <div className="w-32 h-32 rounded-full border-4 border-purple-500/50 overflow-hidden shadow-xl shadow-purple-900/50 mx-auto">
+    <img src="/avatar.jpg" alt="ReyKamiS5" className="w-full h-full object-cover"/>
+  </div>
+  {/* Anillo animado */}
+  <div className="absolute inset-0 w-32 h-32 mx-auto rounded-full border-2 border-purple-400/30 animate-ping"></div>
+</div>
+
+{/* Línea decorativa */}
+<div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-6"></div>
 
         {/* Descripción */}
         <p className="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
@@ -38,15 +47,17 @@ export default function Home() {
           Me gusta descubrir cosas nuevas y aprender constantemente.
         </p>
 
-        {/* Botones */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <a href="#discord" className="group bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
-            Ver mi experiencia →
-          </a>
-          <a href="#contacto" className="group border border-purple-500/50 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
-            Contacto
-          </a>
-        </div>
+  <a href="#discord" className="group bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
+    Ver mi experiencia →
+  </a>
+  <a href="#guias" className="group bg-purple-500/10 border border-purple-500/50 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
+    📋 Guías
+  </a>
+  <a href="#contacto" className="group border border-purple-500/50 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
+    Contacto
+  </a>
+</div>
 
         {/* Flecha scroll */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-purple-400 opacity-60">
