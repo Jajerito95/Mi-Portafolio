@@ -1,4 +1,17 @@
+"use client"
 import Navbar from "./components/Navbar"
+import { motion } from "framer-motion"
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.25, ease: "easeOut" } },
+  exit: { opacity: 0, y: -30, transition: { duration: 0.2, ease: "easeIn" } }
+}
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.15 } }
+}
 
 export default function Home() {
   return (
@@ -13,258 +26,187 @@ export default function Home() {
 
       {/* SECCIÓN 1: HERO */}
       <section id="inicio" className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
+        <motion.div initial="hidden" animate="visible" variants={stagger} className="flex flex-col items-center">
 
-        <div className="mb-6 inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-2">
-          <span className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></span>
-          <span className="text-purple-300 text-sm tracking-widest uppercase font-medium">Bienvenido a mi portafolio</span>
-        </div>
+          <motion.div variants={fadeUp} className="mb-6 inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-2">
+            <span className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></span>
+            <span className="text-purple-300 text-sm tracking-widest uppercase font-medium">Bienvenido a mi portafolio</span>
+          </motion.div>
 
-        <h1 className="text-6xl md:text-8xl font-black mb-6 leading-tight">
-          <span className="text-white drop-shadow-lg">Rey</span>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Kami</span>
-          <span className="text-white drop-shadow-lg">S5</span>
-        </h1>
+          <motion.h1 variants={fadeUp} className="text-6xl md:text-8xl font-black mb-6 leading-tight">
+            <span className="text-white drop-shadow-lg">Rey</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Kami</span>
+            <span className="text-white drop-shadow-lg">S5</span>
+          </motion.h1>
 
-        {/* Foto de perfil */}
-        <div className="relative mb-6 w-32 h-32 mx-auto">
-          <div className="w-32 h-32 rounded-full border-4 border-purple-500/50 overflow-hidden shadow-xl shadow-purple-900/50">
-            <img src="/avatar.jpg" alt="ReyKamiS5" className="w-full h-full object-cover"/>
-          </div>
-          <div className="absolute inset-0 rounded-full border-2 border-purple-400/30 animate-ping"></div>
-        </div>
+          <motion.div variants={fadeUp} className="relative mb-6 w-32 h-32 mx-auto">
+            <div className="w-32 h-32 rounded-full border-4 border-purple-500/50 overflow-hidden shadow-xl shadow-purple-900/50">
+              <img src="/avatar.jpg" alt="ReyKamiS5" className="w-full h-full object-cover"/>
+            </div>
+            <div className="absolute inset-0 rounded-full border-2 border-purple-400/30 animate-ping"></div>
+          </motion.div>
 
-        <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-6"></div>
+          <motion.div variants={fadeUp} className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-6"></motion.div>
 
-        <p className="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
-          Joven apasionado por la tecnología y la comunidad gamer. 
-          Empecé en el mundo del staff para combatir el problema de los 
-          hackers que arruinaban la experiencia en servidores de Minecraft. 
-          Me gusta descubrir cosas nuevas y aprender constantemente.
-        </p>
+          <motion.p variants={fadeUp} className="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
+            Joven apasionado por la tecnología y la comunidad gamer. 
+            Empecé en el mundo del staff para combatir el problema de los 
+            hackers que arruinaban la experiencia en servidores de Minecraft. 
+            Me gusta descubrir cosas nuevas y aprender constantemente.
+          </motion.p>
 
-        <div className="flex flex-col sm:flex-row gap-4">
-          <a href="#discord" className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
-            Ver mi experiencia →
-          </a>
-          <a href="#guias" className="relative bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/50 hover:border-pink-400/70 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/20 hover:from-purple-500/20 hover:to-pink-500/20">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">Guías</span>
-          </a>
-          <a href="#contacto" className="border border-purple-500/50 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
-            Contacto
-          </a>
-        </div>
+          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
+            <a href="#discord" className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
+              Ver mi experiencia →
+            </a>
+            <a href="#guias" className="relative bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/50 hover:border-pink-400/70 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/20 hover:from-purple-500/20 hover:to-pink-500/20">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">Guías</span>
+            </a>
+            <a href="#contacto" className="border border-purple-500/50 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
+              Contacto
+            </a>
+          </motion.div>
+
+        </motion.div>
 
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce text-purple-400 opacity-60">
           <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
             <path d="M12 5v14M5 12l7 7 7-7"/>
           </svg>
         </div>
-
       </section>
 
-      {/* SECCIÓN 2: STAFF */}
       {/* SOBRE MÍ */}
-      <section id="sobre-mi" className="relative z-10 py-24 px-4 max-w-5xl mx-auto">
+      <motion.section id="sobre-mi" initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={stagger} className="relative z-10 py-24 px-4 max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-2 mb-4">
+          <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-2 mb-4">
             <span className="text-purple-300 text-sm tracking-widest uppercase font-medium">Conóceme</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
+          </motion.div>
+          <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-black mb-4">
             Sobre <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">mí</span>
-          </h2>
+          </motion.h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-          {/* Texto */}
-          <div className="space-y-6">
-            <p className="text-gray-300 leading-relaxed text-lg">
-              Hola, soy <span className="text-purple-400 font-semibold">ReyKamiS5</span>, un joven de 
-              <span className="text-purple-400 font-semibold"> España</span> apasionado por la tecnología 
-              y el mundo gamer. Mi nombre viene de <span className="text-purple-400 font-semibold">Kamisama 
+          <motion.div variants={stagger} className="space-y-6">
+            <motion.p variants={fadeUp} className="text-gray-300 leading-relaxed text-lg">
+              Hola, soy <span className="text-purple-400 font-semibold">ReyKamiS5</span>, un joven de
+              <span className="text-purple-400 font-semibold"> España</span> apasionado por la tecnología
+              y el mundo gamer. Mi nombre viene de <span className="text-purple-400 font-semibold">Kamisama
               de Dragon Ball</span> — porque me creía el rey — y el S5 porque me gustó cómo quedaba visualmente.
-            </p>
-            <p className="text-gray-300 leading-relaxed text-lg">
-              Todo empezó jugando a <span className="text-purple-400 font-semibold">Minecraft</span> — había 
-              muchos hackers en los servidores y decidí que quería hacer algo al respecto. Así fue como entré 
+            </motion.p>
+            <motion.p variants={fadeUp} className="text-gray-300 leading-relaxed text-lg">
+              Todo empezó jugando a <span className="text-purple-400 font-semibold">Minecraft</span> — había
+              muchos hackers en los servidores y decidí que quería hacer algo al respecto. Así fue como entré
               al mundo del staff y la moderación de comunidades.
-            </p>
-            <p className="text-gray-300 leading-relaxed text-lg">
-              Ahora me interesa también la <span className="text-purple-400 font-semibold">programación y la 
+            </motion.p>
+            <motion.p variants={fadeUp} className="text-gray-300 leading-relaxed text-lg">
+              Ahora me interesa también la <span className="text-purple-400 font-semibold">programación y la
               tecnología</span>, siempre buscando aprender cosas nuevas y crecer como persona.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          {/* Intereses */}
-          <div className="space-y-4">
-            <h3 className="text-white font-bold text-xl mb-6">Mis intereses</h3>
-
-            <div className="flex items-center gap-4 bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-xl p-4 hover:border-purple-500/50 transition-all duration-300 hover:-translate-x-1">
-              <div className="text-2xl">⛏️</div>
-              <div>
-                <div className="text-white font-semibold">Minecraft</div>
-                <div className="text-gray-400 text-sm">Donde todo comenzó</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-xl p-4 hover:border-purple-500/50 transition-all duration-300 hover:-translate-x-1">
-              <div className="text-2xl">💻</div>
-              <div>
-                <div className="text-white font-semibold">Tecnología y programación</div>
-                <div className="text-gray-400 text-sm">Aprendiendo constantemente</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-xl p-4 hover:border-purple-500/50 transition-all duration-300 hover:-translate-x-1">
-              <div className="text-2xl">🎮</div>
-              <div>
-                <div className="text-white font-semibold">Gaming en general</div>
-                <div className="text-gray-400 text-sm">Siempre explorando nuevos juegos</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-xl p-4 hover:border-purple-500/50 transition-all duration-300 hover:-translate-x-1">
-              <div className="text-2xl">🛡️</div>
-              <div>
-                <div className="text-white font-semibold">Moderación y comunidades</div>
-                <div className="text-gray-400 text-sm">Construyendo espacios sanos</div>
-              </div>
-            </div>
-
-          </div>
+          <motion.div variants={stagger} className="space-y-4">
+            <motion.h3 variants={fadeUp} className="text-white font-bold text-xl mb-6">Mis intereses</motion.h3>
+            {[
+              { emoji: "⛏️", titulo: "Minecraft", desc: "Donde todo comenzó" },
+              { emoji: "💻", titulo: "Tecnología y programación", desc: "Aprendiendo constantemente" },
+              { emoji: "🎮", titulo: "Gaming en general", desc: "Siempre explorando nuevos juegos" },
+              { emoji: "🛡️", titulo: "Moderación y comunidades", desc: "Construyendo espacios sanos" },
+            ].map((item) => (
+              <motion.div key={item.titulo} variants={fadeUp} className="flex items-center gap-4 bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-xl p-4 hover:border-purple-500/50 transition-all duration-300 hover:-translate-x-1">
+                <div className="text-2xl">{item.emoji}</div>
+                <div>
+                  <div className="text-white font-semibold">{item.titulo}</div>
+                  <div className="text-gray-400 text-sm">{item.desc}</div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
+
       {/* ESTADÍSTICAS */}
-      <section className="relative z-10 py-12 px-4 max-w-5xl mx-auto">
+      <motion.section initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={stagger} className="relative z-10 py-12 px-4 max-w-5xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-
-          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 text-center hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1">
-            <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">4</div>
-            <div className="text-gray-400 text-sm font-medium">Servidores</div>
-          </div>
-
-          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 text-center hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1">
-            <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">8+</div>
-            <div className="text-gray-400 text-sm font-medium">Meses de experiencia</div>
-          </div>
-
-          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 text-center hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1">
-            <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">1</div>
-            <div className="text-gray-400 text-sm font-medium">Servidor propio fundado</div>
-          </div>
-
-          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 text-center hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1">
-            <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">∞</div>
-            <div className="text-gray-400 text-sm font-medium">Ganas de aprender</div>
-          </div>
-
+          {[
+            { numero: "4", label: "Servidores" },
+            { numero: "8+", label: "Meses de experiencia" },
+            { numero: "1", label: "Servidor propio fundado" },
+            { numero: "∞", label: "Ganas de aprender" },
+          ].map((stat) => (
+            <motion.div key={stat.label} variants={fadeUp} className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 text-center hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1">
+              <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">{stat.numero}</div>
+              <div className="text-gray-400 text-sm font-medium">{stat.label}</div>
+            </motion.div>
+          ))}
         </div>
-      </section>
-      <section id="discord" className="relative z-10 py-24 px-4 max-w-5xl mx-auto">
+      </motion.section>
 
+      {/* STAFF */}
+      <motion.section id="discord" initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.1 }} variants={stagger} className="relative z-10 py-24 px-4 max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-2 mb-4">
+          <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-2 mb-4">
             <span className="text-purple-300 text-sm tracking-widest uppercase font-medium">Trayectoria</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
+          </motion.div>
+          <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-black mb-4">
             Experiencia como <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Staff</span>
-          </h2>
-          <p className="text-gray-400 text-lg">Servidores donde formé parte del equipo de moderación</p>
+          </motion.h2>
+          <motion.p variants={fadeUp} className="text-gray-400 text-lg">Servidores donde formé parte del equipo de moderación</motion.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/20 hover:-translate-y-1">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl flex items-center justify-center font-black text-lg shadow-lg shadow-purple-900/50">S</div>
-              <div>
-                <h3 className="font-bold text-white text-xl">StarryMC</h3>
-                <span className="text-purple-400 text-sm font-semibold bg-purple-400/10 px-2 py-0.5 rounded-full">Ex-Helper</span>
+          {[
+            { letra: "S", nombre: "StarryMC", rol: "Ex-Helper", color: "from-purple-600 to-purple-800", rolColor: "text-purple-400 bg-purple-400/10", tiempo: "⏱️ 2 meses", desc: "Formé parte del equipo de ayuda al jugador. Salí del servidor tras una acusación injusta de staff abuse." },
+            { letra: "H", nombre: "HadeMC", rol: "Ex-Moderador", color: "from-purple-600 to-purple-800", rolColor: "text-purple-400 bg-purple-400/10", tiempo: "⏱️ 3 meses", desc: "Ejercí como moderador del servidor. Decidí dejarlo por la inactividad del owner, que afectaba al desarrollo del servidor." },
+            { letra: "L", nombre: "LeyendsRP", rol: "Ex-Owner", color: "from-pink-600 to-purple-800", rolColor: "text-pink-400 bg-pink-400/10", tiempo: "👑 Proyecto propio", desc: "Fundé y gestioné mi propio servidor de Roleplay. Tuve que cerrarlo por limitaciones de presupuesto y falta de jugadores." },
+            { letra: "F", nombre: "FlameMC", rol: "Ex-Head Admin", color: "from-orange-500 to-purple-800", rolColor: "text-orange-400 bg-orange-400/10", tiempo: "⏱️ Varios meses", desc: "Ocupé el cargo de Head Admin del servidor. Lo dejé debido a la inactividad del owner, que impedía el crecimiento del proyecto." },
+          ].map((server) => (
+            <motion.div key={server.nombre} variants={fadeUp} className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/20 hover:-translate-y-1">
+              <div className="flex items-center gap-4 mb-4">
+                <div className={`w-12 h-12 bg-gradient-to-br ${server.color} rounded-xl flex items-center justify-center font-black text-lg shadow-lg shadow-purple-900/50`}>{server.letra}</div>
+                <div>
+                  <h3 className="font-bold text-white text-xl">{server.nombre}</h3>
+                  <span className={`${server.rolColor} text-sm font-semibold px-2 py-0.5 rounded-full`}>{server.rol}</span>
+                </div>
               </div>
-            </div>
-            <div className="flex items-center gap-2 text-gray-400 text-sm mb-3">
-              <span>⏱️</span><span>2 meses</span>
-            </div>
-            <p className="text-gray-400 text-sm leading-relaxed">Formé parte del equipo de ayuda al jugador. Salí del servidor tras una acusación injusta de staff abuse.</p>
-          </div>
-
-          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/20 hover:-translate-y-1">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl flex items-center justify-center font-black text-lg shadow-lg shadow-purple-900/50">H</div>
-              <div>
-                <h3 className="font-bold text-white text-xl">HadeMC</h3>
-                <span className="text-purple-400 text-sm font-semibold bg-purple-400/10 px-2 py-0.5 rounded-full">Ex-Moderador</span>
-              </div>
-            </div>
-            <div className="flex items-center gap-2 text-gray-400 text-sm mb-3">
-              <span>⏱️</span><span>3 meses</span>
-            </div>
-            <p className="text-gray-400 text-sm leading-relaxed">Ejercí como moderador del servidor. Decidí dejarlo por la inactividad del owner, que afectaba al desarrollo del servidor.</p>
-          </div>
-
-          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/20 hover:-translate-y-1">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-pink-600 to-purple-800 rounded-xl flex items-center justify-center font-black text-lg shadow-lg shadow-purple-900/50">L</div>
-              <div>
-                <h3 className="font-bold text-white text-xl">LeyendsRP</h3>
-                <span className="text-pink-400 text-sm font-semibold bg-pink-400/10 px-2 py-0.5 rounded-full">Ex-Owner</span>
-              </div>
-            </div>
-            <div className="flex items-center gap-2 text-gray-400 text-sm mb-3">
-              <span>👑</span><span>Proyecto propio</span>
-            </div>
-            <p className="text-gray-400 text-sm leading-relaxed">Fundé y gestioné mi propio servidor de Roleplay. Tuve que cerrarlo por limitaciones de presupuesto y falta de jugadores.</p>
-          </div>
-
-          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/20 hover:-translate-y-1">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-purple-800 rounded-xl flex items-center justify-center font-black text-lg shadow-lg shadow-purple-900/50">F</div>
-              <div>
-                <h3 className="font-bold text-white text-xl">FlameMC</h3>
-                <span className="text-orange-400 text-sm font-semibold bg-orange-400/10 px-2 py-0.5 rounded-full">Ex-Head Admin</span>
-              </div>
-            </div>
-            <div className="flex items-center gap-2 text-gray-400 text-sm mb-3">
-              <span>⏱️</span><span>Varios meses</span>
-            </div>
-            <p className="text-gray-400 text-sm leading-relaxed">Ocupé el cargo de Head Admin del servidor. Lo dejé debido a la inactividad del owner, que impedía el crecimiento del proyecto.</p>
-          </div>
-
+              <div className="flex items-center gap-2 text-gray-400 text-sm mb-3">{server.tiempo}</div>
+              <p className="text-gray-400 text-sm leading-relaxed">{server.desc}</p>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </motion.section>
 
-      {/* SECCIÓN 3: GUÍAS */}
-      <section id="guias" className="relative z-10 py-24 px-4 max-w-5xl mx-auto">
+      {/* GUÍAS */}
+      <motion.section id="guias" initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={stagger} className="relative z-10 py-24 px-4 max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-2 mb-4">
+          <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-2 mb-4">
             <span className="text-purple-300 text-sm tracking-widest uppercase font-medium">Conocimiento</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
+          </motion.div>
+          <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-black mb-4">
             Guías y <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Tutoriales</span>
-          </h2>
-          <p className="text-gray-400 text-lg">Contenido que he creado para la comunidad</p>
+          </motion.h2>
+          <motion.p variants={fadeUp} className="text-gray-400 text-lg">Contenido que he creado para la comunidad</motion.p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-dashed border-purple-900/50 rounded-2xl p-8 text-center hover:border-purple-500/50 transition-all duration-300">
+          <motion.div variants={fadeUp} className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-dashed border-purple-900/50 rounded-2xl p-8 text-center hover:border-purple-500/50 transition-all duration-300">
             <div className="text-4xl mb-4">📋</div>
             <h3 className="font-bold text-white mb-2">Próximamente</h3>
             <p className="text-gray-500 text-sm">Aquí aparecerán tus guías y tutoriales cuando los publiques.</p>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* SECCIÓN 4: CONTACTO */}
-      <section id="contacto" className="relative z-10 py-24 px-4 max-w-2xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-2 mb-4">
+      {/* CONTACTO */}
+      <motion.section id="contacto" initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={stagger} className="relative z-10 py-24 px-4 max-w-2xl mx-auto text-center">
+        <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-2 mb-4">
           <span className="text-purple-300 text-sm tracking-widest uppercase font-medium">Encuéntrame</span>
-        </div>
-        <h2 className="text-4xl md:text-5xl font-black mb-4">
+        </motion.div>
+        <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-black mb-4">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Contacto</span>
-        </h2>
-        <p className="text-gray-400 text-lg mb-12">¿Quieres hablar conmigo? Encuéntrame en mis redes</p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        </motion.h2>
+        <motion.p variants={fadeUp} className="text-gray-400 text-lg mb-12">¿Quieres hablar conmigo? Encuéntrame en mis redes</motion.p>
+        <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://discord.com/users/ReyKamiS5" target="_blank" className="bg-[#5865F2] hover:bg-[#4752c4] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#5865F2]/25 flex items-center justify-center gap-3">
             <span className="text-xl">💬</span>
             <div className="text-left">
@@ -279,8 +221,8 @@ export default function Home() {
               <div>@Justicianaranja2012</div>
             </div>
           </a>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* FOOTER */}
       <footer className="relative z-10 border-t border-purple-900/20 py-8 text-center">
