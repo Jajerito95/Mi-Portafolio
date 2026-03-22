@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar"
 import { motion } from "framer-motion"
 import MusicPlayer from "./components/MusicPlayer"
 import Cursor from "./components/Cursor"
+import Image from "next/image"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -44,7 +45,7 @@ export default function Home() {
 
           <motion.div variants={fadeUp} className="relative mb-6 w-32 h-32 mx-auto">
             <div className="w-32 h-32 rounded-full border-4 border-purple-500/50 overflow-hidden shadow-xl shadow-purple-900/50">
-              <img src="/avatar.jpg" alt="ReyKamiS5" className="w-full h-full object-cover"/>
+              <Image src="/avatar.jpg" alt="ReyKamiS5" width={128} height={128} className="w-full h-full object-cover"/>
             </div>
             <div className="absolute inset-0 rounded-full border-2 border-purple-400/30 animate-ping"></div>
           </motion.div>
