@@ -63,6 +63,32 @@ export default function Home() {
       </section>
 
       {/* SECCIÓN 2: STAFF */}
+      {/* ESTADÍSTICAS */}
+      <section className="relative z-10 py-12 px-4 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 text-center hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1">
+            <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">4</div>
+            <div className="text-gray-400 text-sm font-medium">Servidores</div>
+          </div>
+
+          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 text-center hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1">
+            <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">8+</div>
+            <div className="text-gray-400 text-sm font-medium">Meses de experiencia</div>
+          </div>
+
+          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 text-center hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1">
+            <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">1</div>
+            <div className="text-gray-400 text-sm font-medium">Servidor propio fundado</div>
+          </div>
+
+          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 text-center hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1">
+            <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">∞</div>
+            <div className="text-gray-400 text-sm font-medium">Ganas de aprender</div>
+          </div>
+
+        </div>
+      </section>
       <section id="discord" className="relative z-10 py-24 px-4 max-w-5xl mx-auto">
 
         <div className="text-center mb-16">
