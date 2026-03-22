@@ -5,7 +5,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#0a0a0f] text-white overflow-x-hidden">
       <Navbar />
 
-      {/* Fondo con gradiente y puntos */}
+      {/* Fondo */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#1a0533_0%,_#0a0a0f_60%)]"></div>
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cmFkaWFsR3JhZGllbnQgaWQ9InN0YXIiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IndoaXRlIiBzdG9wLW9wYWNpdHk9IjAuOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0id2hpdGUiIHN0b3Atb3BhY2l0eT0iMCIvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjEiIGZpbGw9InVybCgjc3RhcikiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjMwIiByPSIwLjUiIGZpbGw9InVybCgjc3RhcikiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI4MCIgcj0iMSIgZmlsbD0idXJsKCNzdGFyKSIvPjxjaXJjbGUgY3g9IjE1MCIgY3k9IjIwIiByPSIwLjUiIGZpbGw9InVybCgjc3RhcikiLz48Y2lyY2xlIGN4PSIxODAiIGN5PSIxMjAiIHI9IjEiIGZpbGw9InVybCgjc3RhcikiLz48Y2lyY2xlIGN4PSIzMCIgY3k9IjE1MCIgcj0iMC41IiBmaWxsPSJ1cmwoI3N0YXIpIi8+PGNpcmNsZSBjeD0iNzAiIGN5PSIxNzAiIHI9IjEiIGZpbGw9InVybCgjc3RhcikiLz48Y2lyY2xlIGN4PSIxMjAiIGN5PSIxNDAiIHI9IjAuNSIgZmlsbD0idXJsKCNzdGFyKSIvPjwvc3ZnPg==')] opacity-30"></div>
@@ -13,14 +13,12 @@ export default function Home() {
 
       {/* SECCIÓN 1: HERO */}
       <section id="inicio" className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
-        
-        {/* Badge animado */}
+
         <div className="mb-6 inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-2">
           <span className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></span>
           <span className="text-purple-300 text-sm tracking-widest uppercase font-medium">Bienvenido a mi portafolio</span>
         </div>
 
-        {/* Nombre con glow */}
         <h1 className="text-6xl md:text-8xl font-black mb-6 leading-tight">
           <span className="text-white drop-shadow-lg">Rey</span>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Kami</span>
@@ -28,18 +26,15 @@ export default function Home() {
         </h1>
 
         {/* Foto de perfil */}
-<div className="relative mb-6">
-  <div className="w-32 h-32 rounded-full border-4 border-purple-500/50 overflow-hidden shadow-xl shadow-purple-900/50 mx-auto">
-    <img src="/avatar.jpg" alt="ReyKamiS5" className="w-full h-full object-cover"/>
-  </div>
-  {/* Anillo animado */}
-  <div className="absolute inset-0 w-32 h-32 mx-auto rounded-full border-2 border-purple-400/30 animate-ping"></div>
-</div>
+        <div className="relative mb-6 w-32 h-32 mx-auto">
+          <div className="w-32 h-32 rounded-full border-4 border-purple-500/50 overflow-hidden shadow-xl shadow-purple-900/50">
+            <img src="/avatar.jpg" alt="ReyKamiS5" className="w-full h-full object-cover"/>
+          </div>
+          <div className="absolute inset-0 rounded-full border-2 border-purple-400/30 animate-ping"></div>
+        </div>
 
-{/* Línea decorativa */}
-<div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-6"></div>
+        <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-6"></div>
 
-        {/* Descripción */}
         <p className="text-gray-300 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
           Joven apasionado por la tecnología y la comunidad gamer. 
           Empecé en el mundo del staff para combatir el problema de los 
@@ -48,19 +43,18 @@ export default function Home() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
-  <a href="#discord" className="group bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
-    Ver mi experiencia →
-  </a>
-  <a href="#guias" className="group bg-purple-500/10 border border-purple-500/50 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
-    📋 Guías
-  </a>
-  <a href="#contacto" className="group border border-purple-500/50 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
-    Contacto
-  </a>
-</div>
+          <a href="#discord" className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
+            Ver mi experiencia →
+          </a>
+          <a href="#guias" className="relative bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/50 hover:border-pink-400/70 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/20 hover:from-purple-500/20 hover:to-pink-500/20">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">Guías</span>
+          </a>
+          <a href="#contacto" className="border border-purple-500/50 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
+            Contacto
+          </a>
+        </div>
 
-        {/* Flecha scroll */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-purple-400 opacity-60">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce text-purple-400 opacity-60">
           <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
             <path d="M12 5v14M5 12l7 7 7-7"/>
           </svg>
@@ -68,10 +62,9 @@ export default function Home() {
 
       </section>
 
-      {/* SECCIÓN 2: DISCORD STAFF */}
+      {/* SECCIÓN 2: STAFF */}
       <section id="discord" className="relative z-10 py-24 px-4 max-w-5xl mx-auto">
-        
-        {/* Título */}
+
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-2 mb-4">
             <span className="text-purple-300 text-sm tracking-widest uppercase font-medium">Trayectoria</span>
@@ -84,8 +77,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-          {/* StarryMC */}
-          <div className="group bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/20 hover:-translate-y-1">
+          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/20 hover:-translate-y-1">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl flex items-center justify-center font-black text-lg shadow-lg shadow-purple-900/50">S</div>
               <div>
@@ -99,8 +91,7 @@ export default function Home() {
             <p className="text-gray-400 text-sm leading-relaxed">Formé parte del equipo de ayuda al jugador. Salí del servidor tras una acusación injusta de staff abuse.</p>
           </div>
 
-          {/* HadeMC */}
-          <div className="group bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/20 hover:-translate-y-1">
+          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/20 hover:-translate-y-1">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl flex items-center justify-center font-black text-lg shadow-lg shadow-purple-900/50">H</div>
               <div>
@@ -114,8 +105,7 @@ export default function Home() {
             <p className="text-gray-400 text-sm leading-relaxed">Ejercí como moderador del servidor. Decidí dejarlo por la inactividad del owner, que afectaba al desarrollo del servidor.</p>
           </div>
 
-          {/* LeyendsRP */}
-          <div className="group bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/20 hover:-translate-y-1">
+          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/20 hover:-translate-y-1">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-12 bg-gradient-to-br from-pink-600 to-purple-800 rounded-xl flex items-center justify-center font-black text-lg shadow-lg shadow-purple-900/50">L</div>
               <div>
@@ -129,8 +119,7 @@ export default function Home() {
             <p className="text-gray-400 text-sm leading-relaxed">Fundé y gestioné mi propio servidor de Roleplay. Tuve que cerrarlo por limitaciones de presupuesto y falta de jugadores.</p>
           </div>
 
-          {/* FlameMC */}
-          <div className="group bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/20 hover:-translate-y-1">
+          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/20 hover:-translate-y-1">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-purple-800 rounded-xl flex items-center justify-center font-black text-lg shadow-lg shadow-purple-900/50">F</div>
               <div>
@@ -160,7 +149,7 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 border-dashed rounded-2xl p-8 text-center hover:border-purple-500/50 transition-all duration-300">
+          <div className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-dashed border-purple-900/50 rounded-2xl p-8 text-center hover:border-purple-500/50 transition-all duration-300">
             <div className="text-4xl mb-4">📋</div>
             <h3 className="font-bold text-white mb-2">Próximamente</h3>
             <p className="text-gray-500 text-sm">Aquí aparecerán tus guías y tutoriales cuando los publiques.</p>
@@ -179,14 +168,14 @@ export default function Home() {
         <p className="text-gray-400 text-lg mb-12">¿Quieres hablar conmigo? Encuéntrame en mis redes</p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://discord.com/users/ReyKamiS5" target="_blank" className="group bg-[#5865F2] hover:bg-[#4752c4] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#5865F2]/25 flex items-center justify-center gap-3">
+          <a href="https://discord.com/users/ReyKamiS5" target="_blank" className="bg-[#5865F2] hover:bg-[#4752c4] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#5865F2]/25 flex items-center justify-center gap-3">
             <span className="text-xl">💬</span>
             <div className="text-left">
               <div className="text-xs opacity-70">Discord</div>
               <div>@ReyKamiS5</div>
             </div>
           </a>
-          <a href="https://instagram.com/Justicianaranja2012" target="_blank" className="group bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/25 flex items-center justify-center gap-3">
+          <a href="https://instagram.com/Justicianaranja2012" target="_blank" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/25 flex items-center justify-center gap-3">
             <span className="text-xl">📸</span>
             <div className="text-left">
               <div className="text-xs opacity-70">Instagram</div>
