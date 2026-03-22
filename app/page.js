@@ -196,7 +196,9 @@ export default function Home() {
           <motion.div variants={fadeUp} className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-dashed border-purple-900/50 rounded-2xl p-8 text-center hover:border-purple-500/50 transition-all duration-300">
             <div className="text-4xl mb-4">📋</div>
             <h3 className="font-bold text-white mb-2">Próximamente</h3>
-            <p className="text-gray-500 text-sm">Aquí aparecerán tus guías y tutoriales cuando los publiques.</p>
+            <p className="text-gray-500 text-sm">Aquí pondre mis guías y tutoriales cuando las publiques.
+              Las publicare pronto.
+            </p>
           </motion.div>
         </div>
       </motion.section>
