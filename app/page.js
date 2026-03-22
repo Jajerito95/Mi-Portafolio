@@ -63,6 +63,77 @@ export default function Home() {
       </section>
 
       {/* SECCIÓN 2: STAFF */}
+      {/* SOBRE MÍ */}
+      <section id="sobre-mi" className="relative z-10 py-24 px-4 max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-2 mb-4">
+            <span className="text-purple-300 text-sm tracking-widest uppercase font-medium">Conóceme</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-black mb-4">
+            Sobre <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">mí</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+          {/* Texto */}
+          <div className="space-y-6">
+            <p className="text-gray-300 leading-relaxed text-lg">
+              Hola, soy <span className="text-purple-400 font-semibold">ReyKamiS5</span>, un joven de 
+              <span className="text-purple-400 font-semibold"> España</span> apasionado por la tecnología 
+              y el mundo gamer. Mi nombre viene de <span className="text-purple-400 font-semibold">Kamisama 
+              de Dragon Ball</span> — porque me creía el rey — y el S5 porque me gustó cómo quedaba visualmente.
+            </p>
+            <p className="text-gray-300 leading-relaxed text-lg">
+              Todo empezó jugando a <span className="text-purple-400 font-semibold">Minecraft</span> — había 
+              muchos hackers en los servidores y decidí que quería hacer algo al respecto. Así fue como entré 
+              al mundo del staff y la moderación de comunidades.
+            </p>
+            <p className="text-gray-300 leading-relaxed text-lg">
+              Ahora me interesa también la <span className="text-purple-400 font-semibold">programación y la 
+              tecnología</span>, siempre buscando aprender cosas nuevas y crecer como persona.
+            </p>
+          </div>
+
+          {/* Intereses */}
+          <div className="space-y-4">
+            <h3 className="text-white font-bold text-xl mb-6">Mis intereses</h3>
+
+            <div className="flex items-center gap-4 bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-xl p-4 hover:border-purple-500/50 transition-all duration-300 hover:-translate-x-1">
+              <div className="text-2xl">⛏️</div>
+              <div>
+                <div className="text-white font-semibold">Minecraft</div>
+                <div className="text-gray-400 text-sm">Donde todo comenzó</div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-xl p-4 hover:border-purple-500/50 transition-all duration-300 hover:-translate-x-1">
+              <div className="text-2xl">💻</div>
+              <div>
+                <div className="text-white font-semibold">Tecnología y programación</div>
+                <div className="text-gray-400 text-sm">Aprendiendo constantemente</div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-xl p-4 hover:border-purple-500/50 transition-all duration-300 hover:-translate-x-1">
+              <div className="text-2xl">🎮</div>
+              <div>
+                <div className="text-white font-semibold">Gaming en general</div>
+                <div className="text-gray-400 text-sm">Siempre explorando nuevos juegos</div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-purple-900/50 rounded-xl p-4 hover:border-purple-500/50 transition-all duration-300 hover:-translate-x-1">
+              <div className="text-2xl">🛡️</div>
+              <div>
+                <div className="text-white font-semibold">Moderación y comunidades</div>
+                <div className="text-gray-400 text-sm">Construyendo espacios sanos</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
       {/* ESTADÍSTICAS */}
       <section className="relative z-10 py-12 px-4 max-w-5xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

@@ -11,6 +11,7 @@ export default function Navbar() {
 
         <div className="flex gap-6 text-sm font-medium">
           <a href="#inicio" className="text-gray-400 hover:text-purple-400 transition-colors duration-200">Inicio</a>
+          <a href="#sobre-mi" className="text-gray-400 hover:text-purple-400 transition-colors duration-200">Sobre mí</a>
           <a href="#discord" className="text-gray-400 hover:text-purple-400 transition-colors duration-200">Staff</a>
           <a href="#guias" className="text-gray-400 hover:text-purple-400 transition-colors duration-200">Guías</a>
           <a href="#contacto" className="text-gray-400 hover:text-purple-400 transition-colors duration-200">Contacto</a>
