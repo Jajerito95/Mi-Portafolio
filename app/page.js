@@ -1,6 +1,8 @@
 "use client"
 import Navbar from "./components/Navbar"
 import { motion } from "framer-motion"
+import MusicPlayer from "./components/MusicPlayer"
+import Cursor from "./components/Cursor"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -16,7 +18,8 @@ const stagger = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0a0a0f] text-white overflow-x-hidden">
-      <Navbar />
+     <Navbar />
+     <Cursor />
 
       {/* Fondo */}
       <div className="fixed inset-0 z-0">
@@ -223,6 +226,7 @@ export default function Home() {
           </a>
         </motion.div>
       </motion.section>
+      <MusicPlayer />
 
       {/* FOOTER */}
       <footer className="relative z-10 border-t border-purple-900/20 py-8 text-center">
