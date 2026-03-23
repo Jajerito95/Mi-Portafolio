@@ -1,26 +1,35 @@
 "use client"
-import { useState, useRef, useEffect } from "react"
+import { useState, useEffect } from "react"
 
 export default function MusicPlayer() {
   const [playing, setPlaying] = useState(false)
-  const audioRef = useRef(null)
 
   useEffect(() => {
-    audioRef.current = new Audio("/musica.mp3")
-    audioRef.current.loop = true
-    audioRef.current.volume = 0.3
-    return () => {
-      audioRef.current.pause()
-    }
+    // Revisar cada 100ms si la música ya está sonando desde la intro
+    const check = setInterval(() => {
+      if (window.__musicPlayer && !window.__musicPlayer.paused) {
+        setPlaying(true)
+        clearInterval(check)
+      }
+    }, 100)
+
+    return () => clearInterval(check)
   }, [])
 
   const toggleMusic = () => {
-    if (playing) {
-      audioRef.current.pause()
-    } else {
-      audioRef.current.play()
+    if (!window.__musicPlayer) {
+      window.__musicPlayer = new Audio("/musica.mp3")
+      window.__musicPlayer.loop = true
+      window.__musicPlayer.volume = 0.3
     }
-    setPlaying(!playing)
+
+    if (playing) {
+      window.__musicPlayer.pause()
+      setPlaying(false)
+    } else {
+      window.__musicPlayer.play()
+      setPlaying(true)
+    }
   }
 
   return (
