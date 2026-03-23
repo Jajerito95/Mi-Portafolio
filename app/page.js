@@ -1,9 +1,11 @@
 "use client"
 import Navbar from "./components/Navbar"
+import { useState } from "react"
 import { motion } from "framer-motion"
 import MusicPlayer from "./components/MusicPlayer"
 import Cursor from "./components/Cursor"
 import Image from "next/image"
+import Intro from "./components/Intro"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -17,9 +19,11 @@ const stagger = {
 }
 
 export default function Home() {
+  const [introCompleta, setIntroCompleta] = useState(false)
   return (
     <main className="min-h-screen bg-[#0a0a0f] text-white overflow-x-hidden">
      <Navbar />
+     {!introCompleta && <Intro onComplete={() => setIntroCompleta(true)} />}
      <Cursor />
 
       {/* Fondo */}
