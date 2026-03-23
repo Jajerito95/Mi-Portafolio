@@ -48,7 +48,7 @@ export default function Home() {
       </div>
 
       {/* SECCIÓN 1: HERO */}
-      <section id="inicio" className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
+      <section id="inicio" className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4 pt-20">
         <motion.div initial="hidden" animate="visible" variants={stagger} className="flex flex-col items-center">
 
           <motion.div variants={fadeUp} className="mb-6 inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-2">
@@ -311,8 +311,74 @@ export default function Home() {
       <MusicPlayer />
 
       {/* FOOTER */}
-      <footer className="relative z-10 border-t border-purple-900/20 py-8 text-center">
-        <p className="text-gray-600 text-sm">© 2025 <span className="text-purple-400">ReyKamiS5</span> — Hecho con 💜 y Next.js</p>
+      <footer className="relative z-10 border-t border-purple-900/20 py-12 px-4">
+        <div className="max-w-5xl mx-auto">
+          
+          {/* Parte superior */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            
+            {/* Logo y descripción */}
+            <div>
+              <a href="#inicio" className="text-2xl font-black mb-3 block">
+                <span className="text-white">Rey</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Kami</span>
+                <span className="text-white">S5</span>
+              </a>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Joven apasionado por la tecnología, el gaming y la moderación de comunidades.
+              </p>
+            </div>
+
+            {/* Links rápidos */}
+            <div>
+              <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-widest">Links rápidos</h4>
+              <div className="space-y-2">
+                {[
+                  { href: "#inicio", label: "Inicio" },
+                  { href: "#sobre-mi", label: "Sobre mí" },
+                  { href: "#discord", label: "Staff" },
+                  { href: "#guias", label: "Guías" },
+                  { href: "#contacto", label: "Contacto" },
+                ].map((link) => (
+                  <a key={link.href} href={link.href} className="block text-gray-500 hover:text-purple-400 transition-colors duration-200 text-sm">
+                    → {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Redes sociales */}
+            <div>
+              <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-widest">Redes sociales</h4>
+              <div className="space-y-3">
+                <a href="https://discord.com/users/ReyKamiS5" target="_blank" className="flex items-center gap-3 text-gray-500 hover:text-purple-400 transition-colors duration-200 text-sm">
+                  <span className="text-lg">💬</span>
+                  <span>Discord — @ReyKamiS5</span>
+                </a>
+                <a href="https://instagram.com/Justicianaranja2012" target="_blank" className="flex items-center gap-3 text-gray-500 hover:text-pink-400 transition-colors duration-200 text-sm">
+                  <span className="text-lg">📸</span>
+                  <span>Instagram — @Justicianaranja2012</span>
+                </a>
+                <a href="https://github.com/Jajerito95" target="_blank" className="flex items-center gap-3 text-gray-500 hover:text-white transition-colors duration-200 text-sm">
+                  <span className="text-lg">🐙</span>
+                  <span>GitHub — Jajerito95</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Línea separadora */}
+          <div className="border-t border-purple-900/20 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-gray-600 text-sm">
+              © 2026 <span className="text-purple-400">ReyKamiS5</span> — Todos los derechos reservados
+            </p>
+            <p className="text-gray-600 text-sm">
+              Hecho con 💜 usando <span className="text-purple-400">Next.js</span> y <span className="text-purple-400">Tailwind CSS</span>
+            </p>
+          </div>
+
+        </div>
       </footer>
 
     </main>
