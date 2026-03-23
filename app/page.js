@@ -6,6 +6,7 @@ import Cursor from "./components/Cursor"
 import Image from "next/image"
 import Intro from "./components/Intro"
 import { useState, useEffect } from "react"
+import Link from "next/link"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -22,6 +23,18 @@ const roles = ["Staff", "Gamer", "Developer", "Moderador", "Creador"]
 
 export default function Home() {
   const [introCompleta, setIntroCompleta] = useState(false)
+
+  useEffect(() => {
+    // Si viene de navegación interna, saltar intro
+    if (sessionStorage.getItem("visitaInterna") === "true") {
+      setIntroCompleta(true)
+      sessionStorage.removeItem("visitaInterna")
+    }
+  }, [])
+
+ const handleIntroComplete = () => {
+    setIntroCompleta(true)
+  }
   const [rolActual, setRolActual] = useState(0)
   const [visible, setVisible] = useState(true)
 
@@ -91,8 +104,8 @@ export default function Home() {
               Ver mi experiencia →
             </a>
             <a href="#guias" className="relative bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/50 hover:border-pink-400/70 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/20 hover:from-purple-500/20 hover:to-pink-500/20">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">Guías</span>
-            </a>
+  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">Guías</span>
+</a>
             <a href="#contacto" className="border border-purple-500/50 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
               Contacto
             </a>

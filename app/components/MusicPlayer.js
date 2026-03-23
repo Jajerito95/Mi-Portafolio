@@ -5,14 +5,12 @@ export default function MusicPlayer() {
   const [playing, setPlaying] = useState(false)
 
   useEffect(() => {
-    // Revisar cada 100ms si la música ya está sonando desde la intro
     const check = setInterval(() => {
       if (window.__musicPlayer && !window.__musicPlayer.paused) {
         setPlaying(true)
         clearInterval(check)
       }
     }, 100)
-
     return () => clearInterval(check)
   }, [])
 
@@ -22,7 +20,6 @@ export default function MusicPlayer() {
       window.__musicPlayer.loop = true
       window.__musicPlayer.volume = 0.3
     }
-
     if (playing) {
       window.__musicPlayer.pause()
       setPlaying(false)
