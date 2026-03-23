@@ -104,8 +104,8 @@ export default function Home() {
               Ver mi experiencia →
             </a>
             <a href="#guias" className="relative bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/50 hover:border-pink-400/70 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/20 hover:from-purple-500/20 hover:to-pink-500/20">
-  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">Guías</span>
-</a>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">Guías</span>
+            </a>
             <a href="#contacto" className="border border-purple-500/50 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
               Contacto
             </a>
@@ -250,8 +250,6 @@ export default function Home() {
       </motion.section>
 
       {/* GUÍAS */}
-
-      {/* GUÍAS */}
       <motion.section id="guias" initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={stagger} className="relative z-10 py-24 px-4 max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-2 mb-4">
@@ -263,13 +261,14 @@ export default function Home() {
           <motion.p variants={fadeUp} className="text-gray-400 text-lg">Contenido que he creado para la comunidad</motion.p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <motion.div variants={fadeUp} className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-dashed border-purple-900/50 rounded-2xl p-8 text-center hover:border-purple-500/50 transition-all duration-300">
-            <div className="text-4xl mb-4">📋</div>
-            <h3 className="font-bold text-white mb-2">Próximamente</h3>
-            <p className="text-gray-500 text-sm">Aquí pondre mis guías y tutoriales cuando las publiques.
-              Las publicare pronto.
-            </p>
-          </motion.div>
+          <Link href="/guias">
+  <motion.div variants={fadeUp} className="bg-gradient-to-br from-[#12121a] to-[#0f0f17] border border-dashed border-purple-900/50 rounded-2xl p-8 text-center hover:border-purple-500/50 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-900/20">
+    <div className="text-4xl mb-4">📋</div>
+    <h3 className="font-bold text-white mb-2">Ver todas las guías</h3>
+    <p className="text-gray-500 text-sm">Haz clic para ver las guías y tutoriales disponibles.</p>
+    <div className="mt-4 text-purple-400 text-sm font-semibold">Ver guías →</div>
+  </motion.div>
+</Link>
         </div>
       </motion.section>
 
